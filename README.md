@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="./public/img/menupage.png" >
+  <img src="./public/img/menu-page.png" >
 </div>
 
 ## Sobre
