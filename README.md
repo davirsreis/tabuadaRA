@@ -15,7 +15,7 @@ O jogo funciona como um quiz, com operações básicas da tabuada. O tempo limit
 * Aframe 0.1.3
 * Express 4.18.1
 * Express-handlebars 6.0.6
-* Boostrap 5.2.2
+* Bootstrap 5.2.2
 
 ## Como jogar 
 
