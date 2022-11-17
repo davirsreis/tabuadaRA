@@ -1,9 +1,3 @@
-$( document ).ready(function() {
-    $el=$("a-text")[0];
-    $el.setAttribute('value' ,'10');
-    console.log($el);
-});
-
 function getRandomInt(max) {
     value = Math.floor(Math.random() * max);
     return value+1
@@ -53,12 +47,38 @@ function quiz(){
     if(sinal=='/'){
         console.log(`${dividendo} ${sinal} ${num1} = `);
         console.log(var1 +' ou '+ var2);
+        return operacaoString = `${dividendo} ${sinal} ${num1}`
+
+
     } else {
         console.log(`${num1} ${sinal} ${num2} = `);
         console.log(var1 +' ou '+ var2);
+        return operacaoString = `${num1} ${sinal} ${num2}`
+
     }
 }
 
 quiz()
+
+
+$( document ).ready(function() {
+    $el=$("#n1")[0];
+    $el.setAttribute('value' ,var1);
+    console.log($el);
+});
+
+$( document ).ready(function() {
+    $el=$("#n2")[0];
+    $el.setAttribute('value' ,var2);
+    console.log($el);
+});
+
+$( document ).ready(function() {
+    p=$("#question");
+    $("p").append(operacaoString);
+    console.log(p);
+});
+
+
 
 

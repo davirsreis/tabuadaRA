@@ -10,9 +10,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- style for the loader -->
+    <style>
+        .quiz {
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .quiz div {
+            text-align: center;
+            font-size: 1.25em;
+            color: white;
+        }
+        </style>
 
 </head>
 <body style="overflow: hidden;">
+
+    <div class="quiz">
+        <div><p id="question"></p></div>
+    </div>
     
     <a-scene
     vr-mode-ui="enabled: false;"
@@ -20,16 +45,12 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
     >
-        <a-nft
-        type="nft"
-        url="marker/hiro"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance=".01"
-        smoothThreshold="5"
-        >
-            <a-box color="blue" scale="10 10 10" position="0 0 0"></a-box>
-        </a-nft>
+        <a-marker preset="kanji">
+            <a-text id="n1" position="-0.3 0 0" rotation="0 0 0" scale="2 2 2" value="0"></a-text>
+        </a-marker>
+        <a-marker preset="hiro">
+            <a-text id="n2" position="-0.3 0 0" rotation="0 0 0" scale="2 2 2" value="0"></a-text>
+        </a-marker>
 
         <!-- <a-marker preset="hiro">
             <a-text position="-0.3 0 0" rotation="0 0 0" scale="2 2 2" value="0"></a-text>
