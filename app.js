@@ -30,7 +30,7 @@ app.get('/', (req,res) => {
 })
 
 app.get('/game', (req,res) => {
-    res.render('gameboard/index')
+    res.sendFile(path.join(__dirname + '/views/gameboard/index.html'))
 })
 
 // Outros
