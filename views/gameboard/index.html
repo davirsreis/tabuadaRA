@@ -30,7 +30,25 @@
             font-size: 1.25em;
             color: white;
         }
-        </style>
+
+        #footer {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3em;
+        }
+
+        #footer.active {
+            background-color: rgba(0, 255, 0, 0.8);
+        }
+    </style>
 
 </head>
 <body style="overflow: hidden;">
@@ -45,14 +63,138 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
     >
-        <a-marker preset="kanji">
+
+        <a-marker id="hiro" preset="hiro" emitevents="true">
             <a-text color="red" id="n1" position="-0.5 0 0" rotation="-90 0 0" scale="5 5 5" value="0"></a-text>
         </a-marker>
-        <a-marker preset="hiro">
+        <a-marker id="kanji" preset="kanji" emitevents="true">
             <a-text color="red" id="n2" position="-0.5 0 0" rotation="-90 0 0" scale="5 5 5" value="0"></a-text>
         </a-marker>
+        
 
         <a-entity camera></a-entity>
     </a-scene>
+    <div id="footer"></div>
 </body>
+<script>
+
+function getRandomInt(max) {
+    value = Math.floor(Math.random() * max);
+    return value+1
+}
+
+operacao = ['+','-','*','/']
+
+function quiz(){
+    num1 = getRandomInt(10);
+    num2 = getRandomInt(10);
+    dividendo = num1 * getRandomInt(10)
+    sinal = operacao[0]
+    if (sinal == '+'){
+        correta = num1+num2
+        errada = correta + getRandomInt(3)
+    }
+    if (sinal == '-'){
+        correta = num1-num2
+        errada = correta - getRandomInt(3)
+    }
+    if (sinal == '*'){
+        correta = num1*num2
+        errada = correta + num1
+    }
+    if (sinal == '/'){
+        if (dividendo>num1){
+            correta = dividendo/num1
+        }else if (num1>dividendo){
+            correta = num1/dividendo
+        }
+        else {
+            correta = dividendo/num1
+        }
+        
+        errada = correta+num1
+    }
+    var1 = getRandomInt(2)-1
+    if (var1 == 0){
+        var2 = correta;
+        var1 = errada
+    } else {
+        var2 = errada;
+        var1 = correta
+    }
+
+
+    if(sinal=='/'){
+        console.log(`${dividendo} ${sinal} ${num1} = `);
+        console.log(var1 +' ou '+ var2);
+        return operacaoString = `${dividendo} ${sinal} ${num1}`
+
+
+    } else {
+        console.log(`${num1} ${sinal} ${num2} = `);
+        console.log(var1 +' ou '+ var2);
+        return operacaoString = `${num1} ${sinal} ${num2}`
+
+    }
+}
+
+function startgame() {
+
+    quiz()
+    $( document ).ready(function() {
+        $el=$("#n1")[0];
+        $el.setAttribute('value' ,var1);
+        console.log($el);
+    });
+
+    $( document ).ready(function() {
+        $el=$("#n2")[0];
+        $el.setAttribute('value' ,var2);
+        console.log($el);
+    });
+
+    $( document ).ready(function() {
+        p=$("#question");
+        $("p").text(operacaoString);
+        console.log(p);
+    });
+}
+
+startgame()
+
+hiro.addEventListener('markerFound', function() {
+    document.querySelector("#footer").innerHTML = 'aguardando...';
+})
+
+hiro.addEventListener('markerLost', function() {
+    document.querySelector("#footer").innerHTML = 'marker lost';
+    if(var1==correta){
+        document.querySelector("#footer").innerHTML = 'acertou';
+        document.querySelector("#footer").addClass('active')
+        startgame()
+    } else {
+        document.querySelector("#footer").innerHTML = 'errou';
+        startgame()
+    }
+})
+
+kanji.addEventListener('markerFound', function() {
+    document.querySelector("#footer").innerHTML = 'aguardando...';
+})
+
+kanji.addEventListener('markerLost', function() {
+    document.querySelector("#footer").innerHTML = 'marker lost';
+    if(var2==correta){
+        document.querySelector("#footer").innerHTML = 'acertou';
+        document.querySelector("#footer").addClass('active')
+        startgame()
+    } else {
+        document.querySelector("#footer").innerHTML = 'errou';
+        startgame()
+    }
+})
+
+
+
+</script>
 </html>
