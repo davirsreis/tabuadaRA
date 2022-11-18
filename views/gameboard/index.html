@@ -24,8 +24,25 @@
             justify-content: center;
             align-items: center;
         }
-    
+
         .quiz div {
+            font-size: 1.25em;
+            color: white;
+        }
+
+        .score {
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+        }
+
+        .score div {
+            margin-left: 5px;
             text-align: center;
             font-size: 1.25em;
             color: white;
@@ -45,7 +62,7 @@
             font-size: 3em;
         }
 
-        #footer.active {
+        .active {
             background-color: rgba(0, 255, 0, 0.8);
         }
     </style>
@@ -53,6 +70,9 @@
 </head>
 <body style="overflow: hidden;">
 
+    <div class="score">
+        <div>Score: <span id="countScore">teste</span></div>
+    </div>
     <div class="quiz">
         <div><p id="question"></p></div>
     </div>
@@ -74,7 +94,7 @@
 
         <a-entity camera></a-entity>
     </a-scene>
-    <div id="footer"></div>
+    <footer id="footer"></footer>
 </body>
 <script>
 
@@ -154,9 +174,7 @@ function startgame() {
     });
 
     $( document ).ready(function() {
-        p=$("#question");
-        $("p").text(operacaoString);
-        console.log(p);
+        $("#question").text(operacaoString);
     });
 }
 
@@ -167,10 +185,8 @@ hiro.addEventListener('markerFound', function() {
 })
 
 hiro.addEventListener('markerLost', function() {
-    document.querySelector("#footer").innerHTML = 'marker lost';
     if(var1==correta){
         document.querySelector("#footer").innerHTML = 'acertou';
-        document.querySelector("#footer").addClass('active')
         startgame()
     } else {
         document.querySelector("#footer").innerHTML = 'errou';
@@ -183,10 +199,8 @@ kanji.addEventListener('markerFound', function() {
 })
 
 kanji.addEventListener('markerLost', function() {
-    document.querySelector("#footer").innerHTML = 'marker lost';
     if(var2==correta){
         document.querySelector("#footer").innerHTML = 'acertou';
-        document.querySelector("#footer").addClass('active')
         startgame()
     } else {
         document.querySelector("#footer").innerHTML = 'errou';
