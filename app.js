@@ -7,17 +7,17 @@ const path = require('path')
 
 // Configurações
 
-// Body Parser
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
+// // Body Parser
+// app.use(bodyParser.urlencoded({extended: true}))
+// app.use(bodyParser.json())
 
-// Handlebars
-app.engine('handlebars', engine({defaultLayout: 'main',
-runtimeOptions: {
-    allowProtoPropertiesByDefault: true,
-    allowProtoMethodsByDefault: true
-}}))
-app.set('view engine', 'handlebars')
+// // Handlebars
+// app.engine('handlebars', engine({defaultLayout: 'maidn',
+// runtimeOptions: {
+//     allowProtoPropertiesByDefault: true,
+//     allowProtoMethodsByDefault: true
+// }}))
+// app.set('view engine', 'handlebars')
 
 // Public 
 app.use(express.static(path.join(__dirname,'public')))
@@ -26,7 +26,7 @@ app.use("/images", express.static(path.join(__dirname, "/public/img")));
 
 // Rotas
 app.get('/', (req,res) => {
-    res.render('index')
+    res.sendFile(path.join(__dirname + '/views/index.html'))
 })
 
 app.get('/game', (req,res) => {
