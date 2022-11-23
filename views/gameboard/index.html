@@ -87,9 +87,7 @@ for (i = 0; i <= config.length; i++){
     }
     
 }
-// console.log(sinais);
 countSinais = sinais.length
-// console.log(dificuldade);
 
 function getRandomInt(max) {
     value = Math.floor(Math.random() * max);
@@ -136,12 +134,8 @@ function quiz() {
 
 
     if(sinal=='/'){
-        // console.log(`${dividendo} ${sinal} ${num1} = `);
-        // console.log(var1 +' ou '+ var2);
         return configString = `${dividendo} ${sinal} ${num1}`
     } else {
-        // console.log(`${num1} ${sinal} ${num2} = `);
-        // console.log(var1 +' ou '+ var2);
         return configString = `${num1} ${sinal} ${num2}`
     }
 }

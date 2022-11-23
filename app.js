@@ -1,23 +1,9 @@
 // Carregando módulos
 const express = require('express')
-const { engine } = require('express-handlebars');
-const bodyParser = require('body-parser')
 const app = express()
 const path = require('path')
 
 // Configurações
-
-// // Body Parser
-// app.use(bodyParser.urlencoded({extended: true}))
-// app.use(bodyParser.json())
-
-// // Handlebars
-// app.engine('handlebars', engine({defaultLayout: 'maidn',
-// runtimeOptions: {
-//     allowProtoPropertiesByDefault: true,
-//     allowProtoMethodsByDefault: true
-// }}))
-// app.set('view engine', 'handlebars')
 
 // Public 
 app.use(express.static(path.join(__dirname,'public')))
