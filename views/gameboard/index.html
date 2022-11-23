@@ -18,12 +18,15 @@
 </head>
 <body style="overflow: hidden;">
 
-    <div id="quiz" class="pt-3 px-3 top-bar d-flex justify-content-between">
+    <div id="quiz" class="top-bar pt-3 px-3 d-flex justify-content-between">
         <p id="score">Score: <span id="countScore">0</span></p>
         <p id="question"></p>
         <a href="/"><p>Voltar</p></a>
     </div>
-        
+    <div id="score-bar" class="top-bar-end pt-3 px-3 d-flex text-center">
+        <p id="score">Pontuação final: <span id="countScore-end">0</span></p>
+    </div>
+    
     <a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
@@ -185,47 +188,51 @@ if(dificuldade=='dificil'){
 }
 
 window.setTimeout(function(){
+    $('.top-bar').css({visibility: "hidden"});
+    $('#footer').css({visibility: "hidden"});
+    $('.top-bar-end').css({visibility: "visible"});
+    document.querySelector("#countScore-end").innerHTML = countPontos;
+    window.setTimeout(function(){
     window.location.href='/'
+    }, 5000);
 }, endGame);
 
 hiro.addEventListener('markerFound', function() {
     document.querySelector("#footer").innerHTML = 'aguardando...';
+    $('#footer').css({backgroundColor: "rgba(0, 0, 0, 0.8)"})
 })
 
 hiro.addEventListener('markerLost', function() {
     if(var1==correta){
         document.querySelector("#footer").innerHTML = 'acertou';
+        $('#footer').css({backgroundColor: "rgba(0, 255, 0, 0.8)"})
         somarPontos()
-        window.setTimeout(function(){
-            startgame()
-        }, 1000);
+        startgame()
         
     } else {
         document.querySelector("#footer").innerHTML = 'errou';
+        $('#footer').css({backgroundColor: "rgba(255, 0, 0, 0.8)"})
         subtrairPontos()
-        window.setTimeout(function(){
-            startgame()
-        }, 1000);
+        startgame()
     }
 })
 
 kanji.addEventListener('markerFound', function() {
     document.querySelector("#footer").innerHTML = 'aguardando...';
+    $('#footer').css({backgroundColor: "rgba(0, 0, 0, 0.8)"})
 })
 
 kanji.addEventListener('markerLost', function() {
     if(var2==correta){
         document.querySelector("#footer").innerHTML = 'acertou';
+        $('#footer').css({backgroundColor: "rgba(0, 255, 0, 0.8)"})
         somarPontos()
-        window.setTimeout(function(){
-            startgame()
-        }, 1000);
+        startgame()
     } else {
         document.querySelector("#footer").innerHTML = 'errou';
+        $('#footer').css({backgroundColor: "rgba(255, 0, 0, 0.8)"})
         subtrairPontos()
-        window.setTimeout(function(){
-            startgame()
-        }, 1000);
+        startgame()
     }
 })
 </script>
