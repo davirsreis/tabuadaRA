@@ -16,6 +16,13 @@ O jogo funciona como um quiz, com operações básicas da tabuada. O tempo limit
 * Express 4.18.1
 * Bootstrap 5.2.2
 
-## Como jogar 
+## Link da aplicação
 
-1. Acesse o link: 
+[tabuada-ra.herokuapp.com](https://tabuada-ra.herokuapp.com/)
+
+## Para executar
+
+1. `git clone https://github.com/davirsreis/tabuadaRA.git`
+2. `cd tabuadaRA`
+3. `npm install express@4.18.1`
+4. `node app`
