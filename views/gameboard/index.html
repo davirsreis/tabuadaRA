@@ -196,11 +196,16 @@ hiro.addEventListener('markerLost', function() {
     if(var1==correta){
         document.querySelector("#footer").innerHTML = 'acertou';
         somarPontos()
-        startgame()
+        window.setTimeout(function(){
+            startgame()
+        }, 1000);
+        
     } else {
         document.querySelector("#footer").innerHTML = 'errou';
         subtrairPontos()
-        startgame()
+        window.setTimeout(function(){
+            startgame()
+        }, 1000);
     }
 })
 
@@ -212,11 +217,15 @@ kanji.addEventListener('markerLost', function() {
     if(var2==correta){
         document.querySelector("#footer").innerHTML = 'acertou';
         somarPontos()
-        startgame()
+        window.setTimeout(function(){
+            startgame()
+        }, 1000);
     } else {
         document.querySelector("#footer").innerHTML = 'errou';
         subtrairPontos()
-        startgame()
+        window.setTimeout(function(){
+            startgame()
+        }, 1000);
     }
 })
 </script>
