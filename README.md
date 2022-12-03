@@ -18,7 +18,7 @@ O jogo funciona como um quiz, com operações básicas da tabuada. O tempo limit
 
 ## Link da aplicação
 
-[tabuada-92vrxyt7n-davirsreis.vercel.app/](https://tabuada-92vrxyt7n-davirsreis.vercel.app/)
+[tabuada-ra-davirsreis.vercel.app/](https://tabuada-ra-davirsreis.vercel.app/)
 
 ## Para executar
 
