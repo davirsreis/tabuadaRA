@@ -18,7 +18,7 @@ O jogo funciona como um quiz, com operações básicas da tabuada. O tempo limit
 
 ## Link da aplicação
 
-[tabuada-ra.herokuapp.com](https://tabuada-ra.herokuapp.com/)
+[tabuada-92vrxyt7n-davirsreis.vercel.app/](https://tabuada-92vrxyt7n-davirsreis.vercel.app/)
 
 ## Para executar
 
