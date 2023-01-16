@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-        body {
-            background-image: url('img/woodbackground.png');
-        }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TabuadaAR</title>
@@ -20,59 +17,59 @@
     <div class="container mt-4">
         <div class="p-2 rounded-lg">
             <div class="d-flex justify-content-center">
-                <h1 class="" style="font-size: 1.7rem; color: #191919; font-family: 'Press Start 2P', cursive;">Tabuada com realidade aumentada</h1>
+                <h1 class="h1-custom font-custom">Tabuada com realidade aumentada</h1>
             </div>
             <div class="d-flex justify-content-center">
-                <div class="card mt-5 mx-3" style="width: 40.5rem; border-radius: 16px; background: #E8B71F;">
+                <div class="card mt-2 mx-3 card-custom">
                     <div class="card-body">
-                        <h5 class="card-title text-center mt-4" style="font-family: 'Press Start 2P', cursive;">Como jogar?</h5>
+                        <h4 class="card-title text-center mt-2 font-custom">Como jogar?</h4>
                         <hr class="my-4">
-                        <p class="card-text" style="text-align: justify; color: #191919; font-family: 'Press Start 2P', cursive;">O jogo funciona como um quiz, com operações básicas da tabuada. O tempo limite para a resolução das operações é definido conforme a dificuldade escolhida.</p>
-                        <p class="card-text" style="text-align: justify; color: #191919; font-family: 'Press Start 2P', cursive;">Passo a passo para começar: Posicione os dois cards lado a lado em uma superfície, para serem reconhecidos pela câmera. Aperte "Play" e posicione a mão sobre o card que corresponde a resposta correta.</p>
+                        <p class="card-text p-custom font-custom">O jogo funciona como um quiz, com operações básicas da tabuada. O tempo limite para a resolução das operações é definido conforme a dificuldade escolhida.</p>
+                        <p class="card-text p-custom font-custom">Passo a passo para começar: Posicione os dois cards lado a lado em uma superfície, para serem reconhecidos pela câmera. Aperte "Play" e posicione a mão sobre o card que corresponde a resposta correta.</p>
                     </div>
                 </div>
             </div>
             <form id="form">
-                <div class="mt-5 d-flex justify-content-center">
-                    <div class="d-flex justify-content-center" style="width: 40.5rem; border-radius: 16px; background: #E8B71F;">
-                        <div class="mx-5 mt-2">
-                            <h5 style="font-family: 'Press Start 2P', cursive; font-size:1.0rem">Operações</h5>
+                <div class="mt-4 d-flex justify-content-center">
+                    <div class="d-flex justify-content-center card-custom">
+                        <div class="mx-5 mt-2 font-custom form-custom">
+                            <h5>Operações</h5>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="opSom" checked>
-                                    <label class="form-check-label" for="opSom"  style="font-family: 'Press Start 2P', cursive; font-size:0.8rem">Soma</label>
+                                    <input class="form-check-input" type="checkbox" id="opSom" checked>
+                                    <label class="form-check-label" for="opSom">Soma</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="opSub">
-                                    <label class="form-check-label" for="opSub"  style="font-family: 'Press Start 2P', cursive; font-size:0.8rem">Subtração</label>
+                                    <input class="form-check-input" type="checkbox" id="opSub">
+                                    <label class="form-check-label" for="opSub">Subtração</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="opMult">
-                                    <label class="form-check-label" for="opMult" style="font-family: 'Press Start 2P', cursive; font-size:0.8rem">Multiplicação</label>
+                                    <input class="form-check-input" type="checkbox" id="opMult">
+                                    <label class="form-check-label" for="opMult">Multiplicação</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="opDiv">
-                                    <label class="form-check-label" for="opDiv" style="font-family: 'Press Start 2P', cursive; font-size:0.8rem">Divisão</label>
+                                    <input class="form-check-input" type="checkbox" id="opDiv">
+                                    <label class="form-check-label" for="opDiv">Divisão</label>
                                 </div>
                         </div>
-                        <div class="mx-5 mt-2">
-                            <h5 style="font-family: 'Press Start 2P', cursive; font-size:1.0rem">Dificuldade</h5>
+                        <div class="mx-5 mt-2 font-custom form-custom">
+                            <h5>Dificuldade</h5>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="facil">
-                                    <label class="form-check-label" for="facul" style="font-family: 'Press Start 2P', cursive; font-size:0.8rem">Fácil</label>
+                                    <label class="form-check-label" for="facul">Fácil</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="medio" checked>
-                                    <label class="form-check-label" for="medio" style="font-family: 'Press Start 2P', cursive; font-size:0.8rem">Médio</label>
+                                    <label class="form-check-label" for="medio">Médio</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="dificil">
-                                    <label class="form-check-label" for="dificil" style="font-family: 'Press Start 2P', cursive; font-size:0.8rem">Dificil</label>
+                                    <label class="form-check-label" for="dificil">Difícil</label>
                                 </div>
                         </div>
                     </div>
                 </div>
-                <div class="mt-5 text-center">
-                    <a href="#" form="#form" type="submit" onclick="show()"><img src="img/play-button.png" alt="Play" style="width: 200px;"></a>
+                <div class="mt-4 text-center">
+                    <a href="#" form="#form" type="submit" onclick="show()"><img src="img/play-button.png" alt="Play" class="img-custom"></a>
                 </div>
             </form>
         </div>        
