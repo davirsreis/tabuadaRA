@@ -18,7 +18,7 @@ O jogo funciona como um quiz, com operações básicas da tabuada. O tempo limit
 
 ## Link da aplicação
 
-[tabuada-ra.herokuapp.com](https://tabuada-ra.herokuapp.com/)
+[tabuada-ra.vercel.app/](https://tabuada-ra.vercel.app/)
 
 ## Para executar
 
@@ -30,7 +30,7 @@ O jogo funciona como um quiz, com operações básicas da tabuada. O tempo limit
 ## Instruções
 
 1. Baixe os marcadores disponíveis em tabuadaRA/public/img/marcadores tabuada-ra.png
-2. Acesse o link ou rode a aplicação
-3. Escolha as operações e a dificuldade que deseja e aperte em "Start"
+2. Acesse o link ou inicie a aplicação
+3. Escolha as operações e a dificuldade que deseja e aperte em "Play"
 4. Permita o acesso a câmera, e aponte aos marcadores
 5. Posicione a mão sobre o marcador que corresponde a resposta correta
