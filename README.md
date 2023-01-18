@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="./public/img/menu-page.png" >
+  <img src="./public/img/paginaInicial.png" >
 </div>
 
 ## Sobre
@@ -29,7 +29,7 @@ O jogo funciona como um quiz, com operações básicas da tabuada. O tempo limit
 
 ## Instruções
 
-1. Baixe os marcadores disponíveis em tabuadaRA/public/img/marcadores tabuada-ra.png
+1. Baixe os marcadores disponíveis em tabuadaRA/public/img/marcadores.png
 2. Acesse o link ou inicie a aplicação
 3. Escolha as operações e a dificuldade que deseja e aperte em "Play"
 4. Permita o acesso a câmera, e aponte aos marcadores
