@@ -26,6 +26,10 @@
     <div id="score-bar" class="top-bar-end pt-3 px-3 d-flex text-center">
         <p id="score">Pontuação final: <span id="countScore-end">0</span></p>
     </div>
+    <div id="progressBar">
+        <div class="bar"></div>
+    </div>
+    
     
     <a-scene
     vr-mode-ui="enabled: false;"
@@ -179,17 +183,22 @@ startgame()
 
 if(dificuldade=='facil'){
     endGame = 60000;
+    temporizador = 60;
 }
 if(dificuldade=='medio'){
     endGame = 45000;
+    temporizador = 45;
 }
 if(dificuldade=='dificil'){
     endGame = 30000;
+    temporizador = 30;
 }
 
 window.setTimeout(function(){
     $('.top-bar').css({visibility: "hidden"});
     $('#footer').css({visibility: "hidden"});
+    $('#progressBar').css({visibility: "hidden"});
+    
     $('.top-bar-end').css({visibility: "visible"});
     document.querySelector("#countScore-end").innerHTML = countPontos;
     window.setTimeout(function(){
@@ -235,5 +244,23 @@ kanji.addEventListener('markerLost', function() {
         startgame()
     }
 })
+
+
+    const progressBar = document.querySelector('#progressBar .bar');
+    function progress(startTime, timetotal) {
+        const timeleft = timetotal + (startTime - Date.now()) / 1000 | 0;
+    if (timeleft > 0) {
+        const progressBarWidth = timeleft * 100 / timetotal;
+        // progressBar.innerHTML = `${timeleft} seg`;
+        progressBar.style.width = `${progressBarWidth}%`;
+        setTimeout(progress, 1000, startTime, timetotal);
+    } else {
+        progressBar.innerHTML = ``;
+        progressBar.style.width = "0";
+        // window.location.replace("ENDEREÇO");
+    }
+    }
+
+    progress(Date.now(), temporizador);
 </script>
 </html>

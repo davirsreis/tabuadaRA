@@ -13,7 +13,7 @@
 
 .top-bar-end {
     width: 100%;
-    height: 50px;
+    height: 80px;
     position: absolute;
     top: 0;
     background-color: rgba(0, 0, 0, 0.8);
@@ -30,13 +30,13 @@
 }
 
 .top-bar-end p {
-    font-size: 1rem;
+    font-size: 3rem;
     color: white;
     font-family: 'Press Start 2P', cursive;
 }
 
 #question {
-    font-size: 3.0rem;
+    font-size: 3rem;
 }
 
 a {
@@ -62,4 +62,24 @@ a {
     color: white;
     font-size: 2em;
     font-family: 'Press Start 2P', cursive;
+}
+
+#progressBar {
+    top: 80px;
+    width: 100%;
+    height: 22px;
+    background-color: #E0E0E0;
+    position: absolute !important;
+    visibility: visible;
+  }
+  
+#progressBar div {
+    transition: width 1s;
+    height: 100%;
+    width: 100%;
+    text-align: right;
+    line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+    width: 0;
+    background-color: #FF0000;
+    box-sizing: border-box;
 }
